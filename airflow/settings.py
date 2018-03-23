@@ -28,6 +28,7 @@ from airflow.logging_config import configure_logging
 
 log = logging.getLogger(__name__)
 
+RBAC = conf.getboolean('webserver', 'rbac')
 
 class DummyStatsLogger(object):
     @classmethod
@@ -68,7 +69,6 @@ ___  ___ |  / _  /   _  __/ _  / / /_/ /_ |/ |/ /
  _/_/  |_/_/  /_/    /_/    /_/  \____/____/|__/
  """
 
-BASE_LOG_URL = '/admin/airflow/log'
 LOGGING_LEVEL = logging.INFO
 
 # the prefix to append to gunicorn worker processes after init
